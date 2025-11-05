@@ -1,0 +1,38 @@
+{
+  "name": "matrix-alliance",
+  "version": "1.0.0",
+  "description": "矩阵号联盟 - 可复制的创作者工业体系",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.5",
+    "pinia": "^2.1.7",
+    "@headlessui/vue": "^1.7.16",
+    "@heroicons/vue": "^2.0.18",
+    "chart.js": "^4.4.0",
+    "vue-chartjs": "^5.3.0",
+    "date-fns": "^2.30.0",
+    "axios": "^1.6.0",
+    "vue-toastification": "^2.0.0-rc.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "vite": "^5.0.0",
+    "tailwindcss": "^3.3.6",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "eslint": "^8.55.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.1.1"
+  }
+}
+
+
+

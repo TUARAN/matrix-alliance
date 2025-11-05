@@ -41,11 +41,11 @@
           
           <!-- CTA Buttons -->
           <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <router-link to="/tasks" class="btn-primary text-base px-8 py-3 text-center flex-1 sm:flex-none">
+            <router-link to="/tasks/claim" class="btn-primary text-base px-8 py-3 text-center flex-1 sm:flex-none">
               我是小博主，我想赚点钱
             </router-link>
-            <router-link to="/brand" class="btn-matrix text-base px-8 py-3 text-center flex-1 sm:flex-none">
-              我是品牌方，我想“有效”推广
+            <router-link to="/tasks/publish" class="btn-matrix text-base px-8 py-3 text-center flex-1 sm:flex-none">
+              我是品牌方，我想"有效"推广
             </router-link>
           </div>
           

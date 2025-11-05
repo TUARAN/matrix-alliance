@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers static assets deployment config
+  // Build output directory from Vite
+  "name": "matrix-alliance",
+  "compatibility_date": "2025-11-05",
+  "assets": {
+    "directory": "./dist"
+  }
+}
+
+

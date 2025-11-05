@@ -318,7 +318,8 @@ const handleNavClick = (item) => {
 // 所有导航项
 const allNavItems = [
   { name: 'Home', label: '首页', href: '/' },
-  { name: 'TaskMarket', label: '任务市场', href: '/tasks' },
+  { name: 'ClaimTasks', label: '认领任务', href: '/tasks/claim' },
+  { name: 'PublishTasks', label: '发布任务', href: '/tasks/publish' },
   { name: 'ContentFactory', label: '内容工厂', href: '/content' },
   { name: 'DistributionCenter', label: '分发中心', href: '/distribution' },
   { name: 'Workshop', label: '创作工坊', href: '/workshop' },
@@ -332,7 +333,8 @@ const allNavItems = [
 // 主要导航项（显示在顶部）
 const mainNavItems = computed(() => {
   return [
-    { name: 'TaskMarket', label: '任务市场', href: '/tasks' },
+    { name: 'ClaimTasks', label: '认领任务', href: '/tasks/claim' },
+    { name: 'PublishTasks', label: '发布任务', href: '/tasks/publish' },
     { name: 'ContentFactory', label: '内容工厂', href: '/content' },
     { name: 'DistributionCenter', label: '分发中心', href: '/distribution' },
     { name: 'Workshop', label: '创作工坊', href: '/workshop' }

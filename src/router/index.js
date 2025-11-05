@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 import Home from '../views/Home.vue'
 import TaskMarket from '../views/TaskMarket.vue'
+import ClaimTasks from '../views/ClaimTasks.vue'
+import PublishTasks from '../views/PublishTasks.vue'
 import ContentFactory from '../views/ContentFactory.vue'
 import DistributionCenter from '../views/DistributionCenter.vue'
 import Analytics from '../views/Analytics.vue'
@@ -21,6 +23,16 @@ const routes = [
     path: '/tasks',
     name: 'TaskMarket',
     component: TaskMarket
+  },
+  {
+    path: '/tasks/claim',
+    name: 'ClaimTasks',
+    component: ClaimTasks
+  },
+  {
+    path: '/tasks/publish',
+    name: 'PublishTasks',
+    component: PublishTasks
   },
   {
     path: '/content',

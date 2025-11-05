@@ -164,7 +164,7 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div 
+            <div 
             v-for="taskType in taskTypes" 
             :key="taskType.id"
             @click="selectTaskType(taskType)"
@@ -174,7 +174,18 @@
               : 'border-gray-200 hover:border-primary-300'"
           >
             <div class="w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-3" :class="taskType.bgColor">
-              <component :is="taskType.icon" class="w-6 h-6" :class="taskType.iconColor" />
+              <svg class="w-6 h-6" :class="taskType.iconColor" fill="none" stroke="currentColor" viewBox="0 0 24 24" v-if="taskType.id === 'news'">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+              <svg class="w-6 h-6" :class="taskType.iconColor" fill="none" stroke="currentColor" viewBox="0 0 24 24" v-else-if="taskType.id === 'review'">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <svg class="w-6 h-6" :class="taskType.iconColor" fill="none" stroke="currentColor" viewBox="0 0 24 24" v-else-if="taskType.id === 'article'">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <svg class="w-6 h-6" :class="taskType.iconColor" fill="none" stroke="currentColor" viewBox="0 0 24 24" v-else>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
             </div>
             <h3 class="font-medium text-gray-900 mb-1">{{ taskType.name }}</h3>
             <p class="text-sm text-gray-500">{{ taskType.description }}</p>
@@ -405,32 +416,28 @@ const taskTypes = ref([
     name: '资讯快写',
     description: '快速产出资讯内容',
     bgColor: 'bg-blue-100',
-    iconColor: 'text-blue-600',
-    icon: 'svg'
+    iconColor: 'text-blue-600'
   },
   {
     id: 'review',
     name: '深度测评',
     description: '专业产品测评',
     bgColor: 'bg-green-100',
-    iconColor: 'text-green-600',
-    icon: 'svg'
+    iconColor: 'text-green-600'
   },
   {
     id: 'article',
     name: '长文整包',
     description: '完整长文创作',
     bgColor: 'bg-purple-100',
-    iconColor: 'text-purple-600',
-    icon: 'svg'
+    iconColor: 'text-purple-600'
   },
   {
     id: 'distribution',
     name: '分发放大',
     description: '多平台内容分发',
     bgColor: 'bg-orange-100',
-    iconColor: 'text-orange-600',
-    icon: 'svg'
+    iconColor: 'text-orange-600'
   }
 ])
 

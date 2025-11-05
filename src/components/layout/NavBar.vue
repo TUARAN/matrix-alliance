@@ -44,10 +44,15 @@
                   :key="item.name"
                   href="javascript:void(0)"
                   @click="handleNavClick(item)"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-150 cursor-pointer"
+                  class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-150 cursor-pointer"
                   :class="{ 'bg-primary-50 text-primary-600': $route.name === item.name }"
                 >
-                  {{ item.label }}
+                  <span>{{ item.label }}</span>
+                  <span v-if="isProtectedRoute(item.name)" class="ml-2 text-xs text-amber-600 flex items-center">
+                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
                 </a>
               </div>
             </div>
@@ -105,13 +110,18 @@
             :key="item.name"
             href="javascript:void(0)"
             @click="handleNavClick(item); mobileMenuOpen = false"
-            class="block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 cursor-pointer"
+            class="flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 cursor-pointer"
             :class="{
               'text-primary-600 bg-primary-50 font-semibold': $route.name === item.name,
               'text-gray-700 hover:text-primary-600 hover:bg-gray-50': $route.name !== item.name
             }"
           >
-            {{ item.label }}
+            <span>{{ item.label }}</span>
+            <span v-if="isProtectedRoute(item.name)" class="ml-2 text-xs text-amber-600 flex items-center">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+              </svg>
+            </span>
           </a>
         </div>
         <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-3">
@@ -282,12 +292,15 @@ const handleRegisterSubmit = () => {
   }
 }
 
+// 判断是否为需要登录的路由
+const isProtectedRoute = (routeName) => {
+  const protectedRoutes = ['Analytics', 'Wallet', 'AllianceCore']
+  return protectedRoutes.includes(routeName)
+}
+
 // 处理导航点击，检查登录状态
 const handleNavClick = (item) => {
-  // 需要登录的页面列表
-  const protectedRoutes = ['Analytics', 'Wallet', 'AllianceCore']
-  
-  if (protectedRoutes.includes(item.name)) {
+  if (isProtectedRoute(item.name)) {
     // 检查登录状态
     if (!auth.isAuthenticated) {
       // 未登录，保存待访问的路由，阻止导航并弹出登录框

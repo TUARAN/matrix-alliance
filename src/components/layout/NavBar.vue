@@ -209,11 +209,28 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { useAuthStore } from '../../stores/auth'
 
 const mobileMenuOpen = ref(false)
 const showAuthModal = ref(false)
 const authMode = ref('login') // 'login' or 'register'
+const route = useRoute()
+const router = useRouter()
+const auth = useAuthStore()
+auth.init()
+
+// Open login modal if redirected with ?login=1
+watch(
+  () => route.query.login,
+  (val) => {
+    if (val === '1') {
+      showAuthModal.value = true
+    }
+  },
+  { immediate: true }
+)
 
 const handleLogin = () => {
   authMode.value = 'login'
@@ -232,15 +249,21 @@ const handleRegister = () => {
 }
 
 const handleLoginSubmit = () => {
-  // TODO: 实现登录提交逻辑
-  console.log('提交登录')
+  // 简单模拟登录成功，持久化标记
+  auth.login({ email: 'user@example.com' })
   showAuthModal.value = false
+  // 清除任何 login 提示参数
+  if (route.query.login) {
+    router.replace({ path: route.path, query: {} })
+  }
 }
 
 const handleRegisterSubmit = () => {
-  // TODO: 实现注册提交逻辑
-  console.log('提交注册')
+  auth.login({ email: 'user@example.com' })
   showAuthModal.value = false
+  if (route.query.login) {
+    router.replace({ path: route.path, query: {} })
+  }
 }
 
 // 所有导航项

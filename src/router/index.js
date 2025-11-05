@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useAuthStore } from '../stores/auth'
 import Home from '../views/Home.vue'
 import TaskMarket from '../views/TaskMarket.vue'
 import ContentFactory from '../views/ContentFactory.vue'
@@ -44,17 +45,20 @@ const routes = [
   {
     path: '/analytics',
     name: 'Analytics',
-    component: Analytics
+    component: Analytics,
+    meta: { requiresAuth: true }
   },
   {
     path: '/wallet',
     name: 'Wallet',
-    component: Wallet
+    component: Wallet,
+    meta: { requiresAuth: true }
   },
   {
     path: '/alliance',
     name: 'AllianceCore',
-    component: AllianceCore
+    component: AllianceCore,
+    meta: { requiresAuth: true }
   },
   {
     path: '/brand',
@@ -66,6 +70,20 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+// Global auth guard for protected routes
+router.beforeEach((to, from, next) => {
+  const auth = useAuthStore()
+  // initialize auth from localStorage once
+  if (!auth.isAuthenticated) {
+    auth.init()
+  }
+  if (to.meta && to.meta.requiresAuth && !auth.isAuthenticated) {
+    // redirect to home and optionally show login prompt via query
+    return next({ path: '/', query: { login: '1' } })
+  }
+  next()
 })
 
 export default router

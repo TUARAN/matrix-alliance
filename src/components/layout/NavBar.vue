@@ -39,15 +39,16 @@
             <!-- 下拉菜单 -->
             <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div class="py-2">
-                <router-link 
+                <a
                   v-for="item in moreNavItems" 
                   :key="item.name"
-                  :to="item.href"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-150"
+                  href="javascript:void(0)"
+                  @click="handleNavClick(item)"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-150 cursor-pointer"
                   :class="{ 'bg-primary-50 text-primary-600': $route.name === item.name }"
                 >
                   {{ item.label }}
-                </router-link>
+                </a>
               </div>
             </div>
           </div>
@@ -99,19 +100,19 @@
       <!-- Mobile menu -->
       <div v-if="mobileMenuOpen" class="lg:hidden border-t border-gray-200 py-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
         <div class="space-y-1">
-          <router-link 
+          <a
             v-for="item in navItems" 
             :key="item.name"
-            :to="item.href"
-            @click="mobileMenuOpen = false"
-            class="block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200"
+            href="javascript:void(0)"
+            @click="handleNavClick(item); mobileMenuOpen = false"
+            class="block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 cursor-pointer"
             :class="{
               'text-primary-600 bg-primary-50 font-semibold': $route.name === item.name,
               'text-gray-700 hover:text-primary-600 hover:bg-gray-50': $route.name !== item.name
             }"
           >
             {{ item.label }}
-          </router-link>
+          </a>
         </div>
         <div class="mt-4 pt-4 border-t border-gray-200 flex space-x-3">
           <button 
@@ -216,6 +217,7 @@ import { useAuthStore } from '../../stores/auth'
 const mobileMenuOpen = ref(false)
 const showAuthModal = ref(false)
 const authMode = ref('login') // 'login' or 'register'
+const pendingRoute = ref(null) // 存储待访问的路由
 const route = useRoute()
 const router = useRouter()
 const auth = useAuthStore()
@@ -252,6 +254,13 @@ const handleLoginSubmit = () => {
   // 简单模拟登录成功，持久化标记
   auth.login({ email: 'user@example.com' })
   showAuthModal.value = false
+  
+  // 如果有待访问的路由，登录成功后跳转
+  if (pendingRoute.value) {
+    router.push(pendingRoute.value)
+    pendingRoute.value = null
+  }
+  
   // 清除任何 login 提示参数
   if (route.query.login) {
     router.replace({ path: route.path, query: {} })
@@ -261,9 +270,36 @@ const handleLoginSubmit = () => {
 const handleRegisterSubmit = () => {
   auth.login({ email: 'user@example.com' })
   showAuthModal.value = false
+  
+  // 如果有待访问的路由，注册成功后跳转
+  if (pendingRoute.value) {
+    router.push(pendingRoute.value)
+    pendingRoute.value = null
+  }
+  
   if (route.query.login) {
     router.replace({ path: route.path, query: {} })
   }
+}
+
+// 处理导航点击，检查登录状态
+const handleNavClick = (item) => {
+  // 需要登录的页面列表
+  const protectedRoutes = ['Analytics', 'Wallet', 'AllianceCore']
+  
+  if (protectedRoutes.includes(item.name)) {
+    // 检查登录状态
+    if (!auth.isAuthenticated) {
+      // 未登录，保存待访问的路由，阻止导航并弹出登录框
+      pendingRoute.value = item.href
+      showAuthModal.value = true
+      authMode.value = 'login'
+      return false
+    }
+  }
+  
+  // 已登录或无需登录，正常导航
+  router.push(item.href)
 }
 
 // 所有导航项

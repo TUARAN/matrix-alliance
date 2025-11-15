@@ -8,7 +8,7 @@
             <div class="w-8 h-8 bg-gradient-to-r from-primary-600 to-matrix-600 rounded-lg flex items-center justify-center">
               <span class="text-white font-bold text-sm">M</span>
             </div>
-            <span class="text-xl font-bold">矩阵号联盟</span>
+            <span class="text-xl font-bold">矩阵联盟</span>
           </div>
           <p class="text-gray-400 mb-4 max-w-md">
             把"个人写作"升级为"可复制的创作者工业体系"，让内容像零部件一样被复用、被分发、被结算。
@@ -51,7 +51,7 @@
       </div>
 
       <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-        <p>&copy; 2025 矩阵号联盟. 保留所有权利.</p>
+        <p>&copy; 2025 矩阵联盟. 保留所有权利.</p>
       </div>
     </div>
   </footer>

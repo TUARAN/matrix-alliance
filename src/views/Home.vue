@@ -11,7 +11,7 @@
           
           <!-- Main Title -->
           <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-4 text-center">
-            矩阵号联盟
+            矩阵联盟
           </h1>
           
           <!-- Key Message - Two Column Layout -->
@@ -34,18 +34,15 @@
               </div>
               <p class="text-base text-gray-700 leading-relaxed">
                 把"个人写作"升级为工业体系<br>
-                让内容像零部件一样被复用、被分发、被结算
+            让内容像零部件一样被复用、被分发、被结算
               </p>
             </div>
           </div>
           
           <!-- CTA Buttons -->
           <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <router-link to="/tasks/claim" class="btn-primary text-base px-8 py-3 text-center flex-1 sm:flex-none">
-              我是小博主，我想赚点钱
-            </router-link>
-            <router-link to="/tasks/publish" class="btn-matrix text-base px-8 py-3 text-center flex-1 sm:flex-none">
-              我是品牌方，我想"有效"推广
+            <router-link to="/brand" class="btn-matrix text-base px-8 py-3 text-center flex-1 sm:flex-none">
+              我是品牌方，我想"<span class="text-2xl font-bold text-yellow-300 drop-shadow-lg">更有效</span>"推广
             </router-link>
           </div>
           
@@ -87,7 +84,7 @@
                 <p class="text-sm text-gray-600">承接 B 端广告与品牌测评，面向有粉丝、号权的放大者</p>
               </div>
               <div class="bg-white rounded-lg p-4 border border-purple-200">
-                <div class="font-semibold text-gray-900 mb-2">矩阵号联盟</div>
+                <div class="font-semibold text-gray-900 mb-2">矩阵联盟</div>
                 <p class="text-sm text-gray-600">开放给所有想写的人，让内容成为商品，面向生产者</p>
               </div>
             </div>
@@ -192,7 +189,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
               </svg>
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4">生产者（矩阵号联盟）</h3>
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">生产者（矩阵联盟）</h3>
             <p class="text-gray-600 mb-6">
               提供可复用内容部件，标准化生产流程，确保内容质量和一致性
             </p>
@@ -419,7 +416,7 @@
     <section class="py-20 bg-gradient-to-r from-primary-600 to-matrix-600">
       <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-          加入矩阵号联盟
+          加入矩阵联盟
         </h2>
         <p class="text-xl text-primary-100 mb-8">
           不是靠灵感，而是靠架构；不是靠爆文，而是靠协作；不是靠激情，而是靠循环

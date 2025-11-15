@@ -27,7 +27,8 @@ const routes = [
   {
     path: '/tasks/claim',
     name: 'ClaimTasks',
-    component: ClaimTasks
+    component: ClaimTasks,
+    meta: { requiresAuth: true }
   },
   {
     path: '/tasks/publish',
@@ -47,7 +48,8 @@ const routes = [
   {
     path: '/growth-engine',
     name: 'GrowthEngine',
-    component: GrowthEngine
+    component: GrowthEngine,
+    meta: { requiresAuth: true }
   },
   {
     path: '/workshop',

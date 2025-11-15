@@ -3,16 +3,24 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="mb-8">
-        <div class="flex items-center space-x-3 mb-4">
-          <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-3xl font-bold text-gray-900">狠活引擎</h1>
+              <p class="text-gray-600 mt-1">底层能量与数据中心 · 提供增长工具与数据支撑</p>
+            </div>
+          </div>
+          <router-link to="/workshop" class="btn-primary text-base px-6 py-3 flex items-center justify-center space-x-2 w-full md:w-auto">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
             </svg>
-          </div>
-          <div>
-            <h1 class="text-3xl font-bold text-gray-900">狠活引擎</h1>
-            <p class="text-gray-600 mt-1">底层能量与数据中心 · 提供增长工具与数据支撑</p>
-          </div>
+            <span>创作工坊</span>
+          </router-link>
         </div>
         <p class="text-sm text-gray-500 bg-blue-50 p-4 rounded-lg border border-blue-200">
           💡 这是整个创作联盟的"底层燃料"：投流监控、复用追踪、互动分析、增长工具、脚本库、平台技巧

@@ -4,14 +4,14 @@
       <!-- Header -->
       <div class="mb-8">
         <h1 class="text-3xl font-bold text-gray-900 mb-4">任务市场</h1>
-        <p class="text-gray-600">连接品牌方、博主联盟与矩阵号联盟，实现内容价值最大化</p>
+        <p class="text-gray-600">连接品牌方、博主联盟与矩阵联盟，实现内容价值最大化</p>
       </div>
 
       <!-- Role Toggle -->
       <div class="card mb-8 bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200">
         <div class="mb-4">
           <h3 class="text-lg font-semibold text-gray-900 mb-2">选择您的角色</h3>
-          <p class="text-sm text-gray-600">明确区分博主联盟（放大者）和矩阵号联盟（生产者）</p>
+          <p class="text-sm text-gray-600">明确区分博主联盟（放大者）和矩阵联盟（生产者）</p>
         </div>
         <div class="flex items-center justify-center flex-wrap gap-3">
           <button 
@@ -48,7 +48,7 @@
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
-            <span>矩阵号联盟（生产者）</span>
+            <span>矩阵联盟（生产者）</span>
           </button>
         </div>
         <div class="mt-4 pt-4 border-t border-gray-200">
@@ -62,7 +62,7 @@
               <div class="text-gray-600">有粉丝、号权，负责分发放大</div>
             </div>
             <div class="text-center">
-              <div class="font-semibold text-green-700 mb-1">矩阵号联盟</div>
+              <div class="font-semibold text-green-700 mb-1">矩阵联盟</div>
               <div class="text-gray-600">提供可复用内容部件</div>
             </div>
           </div>
@@ -76,7 +76,7 @@
           <div class="flex justify-between items-center mb-6">
             <div>
               <h2 class="text-xl font-semibold text-gray-900">选择矩阵号</h2>
-              <p class="text-sm text-gray-600 mt-1">从矩阵号联盟中选择要投放的账号</p>
+              <p class="text-sm text-gray-600 mt-1">从矩阵联盟中选择要投放的账号</p>
             </div>
             <div class="flex items-center space-x-4">
               <div class="text-sm text-gray-600">
@@ -398,9 +398,9 @@
         </div>
       </div>
 
-      <!-- Matrix View: 矩阵号联盟（生产者） -->
+      <!-- Matrix View: 矩阵联盟（生产者） -->
       <div v-if="activeRole === 'matrix'">
-        <!-- 矩阵号联盟说明 -->
+        <!-- 矩阵联盟说明 -->
         <div class="card mb-8 bg-gradient-to-r from-green-50 to-teal-50 border-2 border-green-200">
           <div class="flex items-start">
             <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
@@ -409,7 +409,7 @@
               </svg>
             </div>
             <div>
-              <h2 class="text-xl font-semibold text-gray-900 mb-2">矩阵号联盟 - 生产者</h2>
+              <h2 class="text-xl font-semibold text-gray-900 mb-2">矩阵联盟 - 生产者</h2>
               <p class="text-gray-700 mb-2">您是内容创作者，提供可复用内容部件，标准化生产流程</p>
               <ul class="text-sm text-gray-600 space-y-1">
                 <li>• 不论粉丝多少，都能贡献可复用内容单元</li>
@@ -449,7 +449,7 @@
 
         <!-- Available Tasks -->
         <div class="card mb-8">
-          <h2 class="text-xl font-semibold text-gray-900 mb-6">可接任务（矩阵号联盟）</h2>
+          <h2 class="text-xl font-semibold text-gray-900 mb-6">可接任务（矩阵联盟）</h2>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div v-for="task in availableTasks" :key="task.id" class="border border-green-200 rounded-lg p-6 hover:border-green-400 transition-colors bg-gradient-to-br from-white to-green-50">
               <div class="flex justify-between items-start mb-4">
@@ -478,7 +478,7 @@
         </div>
       </div>
 
-      <!-- Seller View: 接任务（兼容旧逻辑，保留给矩阵号联盟） -->
+      <!-- Seller View: 接任务（兼容旧逻辑，保留给矩阵联盟） -->
       <div v-if="activeRole === 'seller'">
         <!-- Filters -->
         <div class="card mb-8">
@@ -583,7 +583,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const activeRole = ref('buyer') // 'buyer'（品牌方）、'blogger'（博主联盟）、'matrix'（矩阵号联盟）、'seller'（兼容）
+const activeRole = ref('buyer') // 'buyer'（品牌方）、'blogger'（博主联盟）、'matrix'（矩阵联盟）、'seller'（兼容）
 
 // 账号选择相关状态
 const selectedAccounts = ref([])
@@ -747,7 +747,7 @@ const bloggerTasks = ref([
   }
 ])
 
-// 矩阵号联盟（生产者）可接的任务数据
+// 矩阵联盟（生产者）可接的任务数据
 const availableTasks = ref([
   {
     id: 1,

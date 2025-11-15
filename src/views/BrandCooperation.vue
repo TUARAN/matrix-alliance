@@ -11,12 +11,20 @@
           构建去中心化内容系统，让品牌价值持续占领用户心智
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="btn-primary text-lg px-8 py-3">
-            立即咨询合作
-          </button>
+          <router-link to="/tasks/publish" class="btn-primary text-lg px-8 py-3 text-center">
+            发布任务
+          </router-link>
           <button class="btn-secondary text-lg px-8 py-3">
             查看案例
           </button>
+          <a 
+            href="https://csdn-fans-tracker.pages.dev/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="btn-matrix text-lg px-8 py-3 text-center"
+          >
+            矩阵示例
+          </a>
         </div>
       </div>
 
@@ -45,7 +53,7 @@
             </ul>
           </div>
           <div>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">✅ 矩阵号联盟解决方案</h2>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">✅ 矩阵联盟解决方案</h2>
             <ul class="space-y-3 text-gray-700">
               <li class="flex items-start">
                 <span class="text-green-600 mr-2">•</span>
@@ -283,7 +291,7 @@
                 <p class="text-sm text-gray-500">科技/企业服务</p>
               </div>
             </div>
-            <p class="text-gray-600 mb-4">通过矩阵号联盟，3个月内实现品牌认知度提升300%，内容资产沉淀156篇，通过垂直账号矩阵在多平台分发。</p>
+            <p class="text-gray-600 mb-4">通过矩阵联盟，3个月内实现品牌认知度提升300%，内容资产沉淀156篇，通过垂直账号矩阵在多平台分发。</p>
             <div class="grid grid-cols-3 gap-4 text-sm">
               <div>
                 <div class="text-gray-600">曝光量</div>
@@ -349,13 +357,13 @@
       <div class="card bg-gradient-to-r from-primary-600 to-matrix-600 text-white text-center">
         <h2 class="text-3xl font-bold mb-4">期待合作</h2>
         <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-          矩阵号联盟不是"投放工具"，而是品牌的内容增长伙伴 + 渠道孵化器。<br>
+          矩阵联盟不是"投放工具"，而是品牌的内容增长伙伴 + 渠道孵化器。<br>
           我们一起跑通一个可复用的内容增长模型。
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <button class="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200">
-            立即咨询合作
-          </button>
+          <router-link to="/tasks/publish" class="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200 text-center">
+            发布任务
+          </router-link>
           <button class="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-medium py-3 px-8 rounded-lg transition-colors duration-200">
             查看详细方案
           </button>

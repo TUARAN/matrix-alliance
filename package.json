@@ -1,7 +1,7 @@
 {
   "name": "matrix-alliance",
   "version": "1.0.0",
-  "description": "矩阵号联盟 - 可复制的创作者工业体系",
+  "description": "矩阵联盟 - 可复制的创作者工业体系",
   "type": "module",
   "scripts": {
     "dev": "vite",

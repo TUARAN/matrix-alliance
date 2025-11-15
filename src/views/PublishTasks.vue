@@ -17,9 +17,9 @@
           </div>
           <div>
             <h2 class="text-xl font-semibold text-gray-900 mb-2">品牌方</h2>
-            <p class="text-gray-700 mb-2">发布任务，选择账号投放，让矩阵号联盟为您创作内容</p>
+            <p class="text-gray-700 mb-2">发布任务，选择账号投放，让矩阵联盟为您创作内容</p>
             <ul class="text-sm text-gray-600 space-y-1">
-              <li>• 从矩阵号联盟中选择要投放的账号</li>
+              <li>• 从矩阵联盟中选择要投放的账号</li>
               <li>• 发布任务需求，等待创作者认领</li>
               <li>• 跟踪任务进度，管理投放效果</li>
             </ul>
@@ -32,7 +32,7 @@
         <div class="flex justify-between items-center mb-6">
           <div>
             <h2 class="text-xl font-semibold text-gray-900">选择矩阵号</h2>
-            <p class="text-sm text-gray-600 mt-1">从矩阵号联盟中选择要投放的账号</p>
+            <p class="text-sm text-gray-600 mt-1">从矩阵联盟中选择要投放的账号</p>
           </div>
           <div class="flex items-center space-x-4">
             <div class="text-sm text-gray-600">
